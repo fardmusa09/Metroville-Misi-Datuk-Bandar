@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Fredoka:wght@400;500;600&family=Lexend:wght@300;400;500;600;700&family=Varela+Round&family=Nunito:wght@400;600;700;800&display=swap');
+
+@theme {
+  --font-display: "Be Vietnam Pro", sans-serif;
+  --font-body: "Nunito", "Lexend", sans-serif;
+  --font-rounded: "Varela Round", sans-serif;
+  
+  --color-primary: #13ec5b;
+  --color-primary-dark: #0ea641;
+  --color-background-light: #f6f8f6;
+  --color-background-dark: #102216;
+  --color-sim-blue: #0094FF;
+  --color-sim-dark-blue: #005694;
+  --color-sim-green: #2ECC71;
+  --color-sim-green-hover: #27ae60;
+  --color-sim-bg: #EAF4FC;
+  --color-sim-text: #1A2B45;
+  --color-sim-text-light: #6B819C;
+}
+
+@layer base {
+  body {
+    @apply bg-background-light font-body text-slate-800 antialiased overflow-hidden h-screen w-screen selection:bg-primary selection:text-slate-900;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-xl;
+  }
+  
+  .sim-card {
+    @apply bg-white rounded-3xl shadow-lg border border-slate-200;
+  }
+  
+  .btn-hover-effect {
+    @apply transition-all duration-200 active:scale-95 hover:scale-105;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-slate-100 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full hover:bg-slate-400;
+  }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drift {
+  from { transform: translateX(-10%) translateY(0); }
+  to { transform: translateX(110%) translateY(10px); }
+}
+
+@keyframes car-move {
+  0% { transform: translate(0, 0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate(100px, 50px); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+.animate-drift {
+  animation: drift 60s linear infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.car-sim {
+  position: absolute;
+  width: 12px;
+  height: 8px;
+  background: #facc15;
+  border-radius: 2px;
+  animation: car-move 10s linear infinite;
+}
+
+.glass-button {
+  @apply bg-white/20 backdrop-blur-xl border-2 border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] text-white font-bold uppercase tracking-wider;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.glass-button:hover {
+  @apply bg-white/40 scale-105 border-white/80 shadow-[0_12px_40px_0_rgba(31,38,135,0.25)];
+}
+
+.mayor-avatar-bg {
+  background-size: 180%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease;
+}
+
+.character-portrait {
+  object-fit: cover;
+  object-position: top;
+  transform: scale(1.8);
+  transform-origin: top center;
+  transition: all 0.5s ease;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+.isometric-bg {
+  background-image: linear-gradient(to bottom, rgba(240, 249, 255, 0.8), rgba(240, 249, 255, 0.95)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpd-ah4jmss7OqSl99dSBuZfkNMpqANdBtEkKUHtB3s7c3PxzyU64ZhijZq36kevGgZyWP8nmAj-8vMk2NWs6W2_V4wp0mIyBUdhwmjE80FCAYLvdv8PzpmWv0sFYHIHbA8Lj9_GLtoDbdcKgjyDoa5hbr56IdgVuEUUCvtO-WrewIwVHsPjGNK0YyS_W90sYM1GVNDlHeI5EQPHbREvMLsqYOZST5QnbpvSntVffjmZNxMTpn3fXh6Hftj0Qu1mfMEsUwMvUz42-h');
+  background-size: cover;
+  background-position: center;
+}
