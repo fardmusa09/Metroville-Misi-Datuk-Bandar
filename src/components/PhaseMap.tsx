@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { POI_DATA, MAYOR_AVATAR_URL, CFO_KAMAL_URL } from '../constants';
 import { POICase } from '../types';
 import { GameHeader } from './GameHeader';
+import { audioService } from '../services/audioService';
 
 interface PhaseMapProps {
   fundLevel: number;
@@ -30,6 +31,11 @@ export const PhaseMap: React.FC<PhaseMapProps> = ({
   const [activePoi, setActivePoi] = useState<POICase | null>(null);
   const [currentPoiStep, setCurrentPoiStep] = useState(0);
   const [showActions, setShowActions] = useState(false);
+
+  useEffect(() => {
+    // Start new BGM for the map phase
+    audioService.playBgm('https://raw.githubusercontent.com/fardmusa09/Metroville-Game/5bc395055d30f690a94f6878ef3d0b247d095eeb/Simulated_Serenity.mp3');
+  }, []);
 
   const startInvestigation = (poi: POICase) => {
     setActivePoi(poi);
@@ -81,21 +87,23 @@ export const PhaseMap: React.FC<PhaseMapProps> = ({
             style={{ top: pos.top, left: pos.left }}
             onClick={() => !isVisited && startInvestigation(poi)}
           >
-            <div className="relative flex items-center justify-center">
-              {!isVisited && <div className="absolute w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-primary/60 rounded-full animate-ping"></div>}
-              <div className={`relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 ${isVisited ? 'bg-slate-400 border-slate-300' : 'bg-primary border-white'} rounded-full flex items-center justify-center shadow-lg border-2 sm:border-[3px] group-hover:scale-110 transition-transform`}>
-                {/* Sims Plumbob for unvisited markers */}
-                {!isVisited && (
-                  <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2">
-                    <div className="w-2 h-4 sm:w-3 sm:h-5 bg-sim-green rounded-full shadow-[0_0_10px_rgba(74,222,128,0.8)] animate-bounce"></div>
-                  </div>
-                )}
-                <span className={`material-symbols-outlined ${isVisited ? 'text-slate-200' : 'text-white'} font-bold text-lg sm:text-xl md:text-2xl`}>
-                  {poi.id === 'roadtax' ? 'directions_car' : 
-                   poi.id === 'sst' ? 'storefront' : 
-                   poi.id === 'property' ? 'apartment' : 
-                   poi.id === 'income' ? 'person_search' : 'landscape'}
-                </span>
+            <div className="relative flex flex-col items-center justify-center">
+              {/* Pulsing shadow/base */}
+              {!isVisited && (
+                <div className="absolute -bottom-2 w-6 h-2 bg-black/40 rounded-[100%] blur-[2px] animate-pulse"></div>
+              )}
+              
+              {/* The Pin */}
+              <div className={`relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 ${isVisited ? 'bg-slate-400' : 'bg-primary'} rounded-full rounded-br-none rotate-45 shadow-[inset_-2px_-2px_6px_rgba(0,0,0,0.2),_4px_4px_10px_rgba(0,0,0,0.3)] group-hover:-translate-y-2 transition-transform duration-300 ${!isVisited ? 'animate-bounce' : ''}`}>
+                {/* Inner circle */}
+                <div className={`absolute w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-white rounded-full flex items-center justify-center shadow-inner`}>
+                  <span className={`material-symbols-outlined -rotate-45 ${isVisited ? 'text-slate-400' : 'text-primary'} font-black text-base sm:text-lg md:text-xl`}>
+                    {poi.id === 'roadtax' ? 'directions_car' : 
+                     poi.id === 'sst' ? 'storefront' : 
+                     poi.id === 'property' ? 'apartment' : 
+                     poi.id === 'income' ? 'person_search' : 'landscape'}
+                  </span>
+                </div>
               </div>
             </div>
             <div className={`mt-1 sm:mt-1.5 bg-white ${isVisited ? 'text-slate-400' : 'text-slate-800'} text-[8px] sm:text-[9px] md:text-[10px] font-bold px-2 sm:px-2.5 py-0.5 rounded-full shadow-md whitespace-nowrap transition-colors`}>
@@ -211,9 +219,6 @@ export const PhaseMap: React.FC<PhaseMapProps> = ({
                 <div className="bg-white/95 backdrop-blur-md rounded-xl p-6 shadow-xl border-b-4 border-primary grow flex flex-col">
                   <div className="relative w-full aspect-square bg-slate-100 rounded-xl overflow-hidden mb-4 border border-slate-200 flex items-center justify-center">
                     <img src={activePoi.suspectImage} alt={activePoi.suspectName} className="w-full h-full character-portrait" referrerPolicy="no-referrer" />
-                    <div className="absolute top-2 right-2">
-                      <div className="w-4 h-6 bg-sim-green rounded-full shadow-[0_0_10px_rgba(74,222,128,0.8)] animate-bounce"></div>
-                    </div>
                   </div>
                   <div className="space-y-4">
                     <div>
@@ -237,12 +242,15 @@ export const PhaseMap: React.FC<PhaseMapProps> = ({
                   <>
                     <div className="relative grow bg-slate-200/50 rounded-xl overflow-hidden glass-panel flex items-center justify-center p-4">
                       <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/50 bg-slate-800 flex items-center justify-center">
-                        <img className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" src={activePoi.evidenceImage} alt="Evidence" referrerPolicy="no-referrer"/>
+                        <img className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay blur-sm" src={activePoi.evidenceImage} alt="Evidence Background" referrerPolicy="no-referrer"/>
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                           <div className="rounded-2xl p-1 bg-red-500/20 backdrop-blur-sm border-4 border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]">
                             <div className="relative w-48 h-48 bg-slate-900 rounded-xl overflow-hidden flex flex-col items-center justify-center shadow-[0_0_50px_rgba(239,68,68,0.2)]">
-                              <span className="material-symbols-outlined text-6xl text-white/90 animate-pulse">{activePoi.evidenceIcon}</span>
-                              <div className="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">EVIDENCE</div>
+                              <img className="absolute inset-0 w-full h-full object-cover object-top" src={activePoi.evidenceImage} alt="Evidence" referrerPolicy="no-referrer"/>
+                              <div className="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase shadow-md">EVIDENCE</div>
+                              <div className="absolute bottom-2 right-2 bg-slate-900/80 p-1.5 rounded-lg backdrop-blur-sm border border-white/20">
+                                <span className="material-symbols-outlined text-2xl text-white/90">{activePoi.evidenceIcon}</span>
+                              </div>
                             </div>
                           </div>
                           <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
@@ -267,10 +275,6 @@ export const PhaseMap: React.FC<PhaseMapProps> = ({
                         ) : (
                           <img src={activePoi.suspectImage} className="w-full h-full character-portrait" alt="Suspect" referrerPolicy="no-referrer" />
                         )}
-                        {/* Plumbob for active speaker */}
-                        <div className="absolute -top-1 left-1/2 -translate-x-1/2">
-                          <div className="w-2 h-3 bg-sim-green rounded-full shadow-[0_0_8px_rgba(74,222,128,0.6)] animate-pulse"></div>
-                        </div>
                       </div>
                       <div className="flex-1 flex flex-col justify-center">
                         <div className="flex items-center gap-2 mb-1">
@@ -279,7 +283,7 @@ export const PhaseMap: React.FC<PhaseMapProps> = ({
                           </span>
                         </div>
                         <p className="text-slate-700 font-medium text-sm md:text-base leading-relaxed">
-                          {activePoi.dialogues[currentPoiStep].text}
+                          {activePoi.dialogues[currentPoiStep].text.replace(/Datuk Bandar/g, playerName)}
                         </p>
                       </div>
                       <button onClick={nextDialogue} className="bg-slate-800 text-white px-6 py-4 rounded-xl font-bold text-sm flex items-center gap-2 hover:bg-slate-900 transition-all shadow-md btn-hover-effect shrink-0">

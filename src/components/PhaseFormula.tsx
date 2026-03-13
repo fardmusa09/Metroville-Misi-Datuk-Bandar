@@ -107,7 +107,7 @@ export const PhaseFormula: React.FC<PhaseFormulaProps> = ({
               </div>
             </div>
             <div className="relative bg-white/60 rounded-xl p-3 md:p-4 italic text-xs md:text-sm text-slate-700 leading-relaxed border border-white/80 font-medium">
-              "Bagus, Datuk Bandar! Sebelum kita mula mengira cukai rakyat di Klinik Cukai, kita perlu tahu formula asas mencari <span className="font-bold text-primary-dark">Pendapatan Bercukai</span>."
+              "Bagus, {playerName}! Sebelum kita mula mengira cukai rakyat di Klinik Cukai, kita perlu tahu formula asas mencari <span className="font-bold text-primary-dark">Pendapatan Bercukai</span>."
               <div className="absolute -top-2 left-6 w-4 h-4 bg-white/60 rotate-45 border-l border-t border-white/80"></div>
             </div>
           </div>
@@ -240,7 +240,7 @@ export const PhaseFormula: React.FC<PhaseFormulaProps> = ({
                 </div>
 
                 <h3 className="text-2xl md:text-3xl font-black text-slate-800 mb-4 tracking-tight">
-                  Syabas, Datuk Bandar!
+                  Syabas, {playerName}!
                 </h3>
                 
                 <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100 mb-8 relative">

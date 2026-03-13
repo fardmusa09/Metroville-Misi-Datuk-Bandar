@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { audioService } from '../services/audioService';
 import { GameHeader } from './GameHeader';
@@ -151,13 +151,34 @@ export function PhaseTaxMatch({
   const [consequences, setConsequences] = useState(INITIAL_CONSEQUENCES);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isAllCorrect, setIsAllCorrect] = useState(false);
+  const [correctRowsCount, setCorrectRowsCount] = useState(0);
+  const isShuffling = useRef(true);
 
   useEffect(() => {
     // Shuffle on mount
     setTaxTypes(shuffleArray(TAX_TYPES));
     setAgencies(shuffleArray(INITIAL_AGENCIES));
     setConsequences(shuffleArray(INITIAL_CONSEQUENCES));
+    
+    setTimeout(() => {
+      isShuffling.current = false;
+    }, 500);
   }, []);
+
+  useEffect(() => {
+    let currentCorrect = 0;
+    for (let i = 0; i < taxTypes.length; i++) {
+      if (agencies[i].matchId === taxTypes[i].id && consequences[i].matchId === taxTypes[i].id) {
+        currentCorrect++;
+      }
+    }
+    
+    if (!isShuffling.current && currentCorrect > correctRowsCount) {
+      audioService.playMatch();
+    }
+    
+    setCorrectRowsCount(currentCorrect);
+  }, [taxTypes, agencies, consequences]);
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -223,11 +244,17 @@ export function PhaseTaxMatch({
   };
 
   const resetGame = () => {
+    audioService.playTryAgain();
+    isShuffling.current = true;
     setIsSubmitted(false);
     setIsAllCorrect(false);
     setTaxTypes(shuffleArray(TAX_TYPES));
     setAgencies(shuffleArray(INITIAL_AGENCIES));
     setConsequences(shuffleArray(INITIAL_CONSEQUENCES));
+    
+    setTimeout(() => {
+      isShuffling.current = false;
+    }, 500);
   };
 
   const formattedFund = ((fundLevel / 100) * 50000).toLocaleString();

@@ -79,7 +79,7 @@ export const PhaseMenu: React.FC<PhaseMenuProps> = ({ playerName, playerAvatar, 
           </div>
           {/* Secondary Title/Subheader */}
           <h2 className="text-white text-lg md:text-xl font-black tracking-widest uppercase bg-primary-dark/80 px-8 py-2.5 rounded-full border-2 border-white/50 shadow-xl" style={{ textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>
-            Selamat Datang Datuk Bandar {playerName}
+            Selamat Datang {playerName}
           </h2>
         </header>
         {/* END: Top Header */}

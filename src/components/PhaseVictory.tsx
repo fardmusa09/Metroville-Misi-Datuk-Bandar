@@ -70,7 +70,7 @@ export const PhaseVictory: React.FC<PhaseVictoryProps> = ({ playerName, playerAv
               <div className="relative w-full h-48 md:h-64 flex justify-center items-end">
                 <div className="bg-white/90 backdrop-blur text-slate-900 px-6 py-4 rounded-t-xl text-center max-w-lg shadow-lg mb-6">
                   <p className="font-bold text-lg mb-1">Encik Johan & Puan Sara</p>
-                  <p className="text-sm text-slate-600">"Terima kasih Datuk Bandar! Segala taksiran cukai kami berjalan lancar. Jalan raya sudah baiki, hospital juga lengkap!"</p>
+                  <p className="text-sm text-slate-600">"Terima kasih {playerName}! Segala taksiran cukai kami berjalan lancar. Jalan raya sudah baiki, hospital juga lengkap!"</p>
                 </div>
               </div>
             </div>

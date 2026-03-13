@@ -55,6 +55,14 @@ class AudioService {
   playSuccess() {
     this.playSfx('https://cdn.pixabay.com/audio/2021/08/04/audio_0625c1539c.mp3'); // Success chime
   }
+
+  playMatch() {
+    this.playSfx('https://cdn.pixabay.com/audio/2021/08/04/audio_bb630cc098.mp3'); // Correct match ding
+  }
+
+  playTryAgain() {
+    this.playSfx('https://cdn.pixabay.com/audio/2021/08/04/audio_c6ccf3232f.mp3'); // Reset/swoosh sound
+  }
 }
 
 export const audioService = new AudioService();

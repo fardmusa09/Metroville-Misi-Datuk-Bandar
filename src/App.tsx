@@ -36,7 +36,10 @@ export default function App() {
   };
 
   const handleRegistrationComplete = (name: string, avatar: string) => {
-    setPlayerName(name);
+    const formattedName = name.toLowerCase().startsWith('datuk bandar') 
+      ? name 
+      : `Datuk Bandar ${name}`;
+    setPlayerName(formattedName);
     setPlayerAvatar(avatar);
     setPhase('menu');
   };

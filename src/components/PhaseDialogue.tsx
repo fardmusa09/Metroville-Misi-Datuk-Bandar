@@ -43,7 +43,7 @@ export const PhaseDialogue: React.FC<PhaseDialogueProps> = ({ playerName, player
               {isPlayer ? playerName : step.speaker}
             </div>
             <p className="text-xl text-slate-200 leading-relaxed font-medium mt-2 mb-8">
-              {step.text}
+              {step.text.replace(/Datuk Bandar/g, playerName)}
             </p>
             <div className="flex flex-col gap-3 items-end">
               {step.choices.map((choice, idx) => (

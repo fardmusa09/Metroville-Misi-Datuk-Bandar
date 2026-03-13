@@ -42,7 +42,7 @@ export const POI_DATA: POICase[] = [
     offenseDetail: "Tidak Diperbaharui", 
     evidenceIcon: "directions_off", 
     evidenceText: "Kenderaan LKM Mati",
-    evidenceImage: "https://images.unsplash.com/photo-1594051664234-2720be560383?q=80&w=800&auto=format&fit=crop", // Stylized car
+    evidenceImage: "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/cf54c2f2364192a0228c6da323c846c21ffdd441/Cukai%20Jalan.png",
     suspectImage: "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/1f085a32ef9d9932fb7fef4860d49bdc8e2965b2/Pak%20Samad.png",
     dialogues: [
       { speaker: "Pak Samad", emoji: "😡", text: "Kenapa kereta saya ditahan Datuk Bandar?! Cukai jalan saya baru tamat tempoh sebulan." },
@@ -60,7 +60,7 @@ export const POI_DATA: POICase[] = [
     offenseDetail: "Aduan Pelanggan Tempatan", 
     evidenceIcon: "receipt_long", 
     evidenceText: "Resit Tidak Jelas",
-    evidenceImage: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop", // Cozy cafe
+    evidenceImage: "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/cf54c2f2364192a0228c6da323c846c21ffdd441/Cukai%20Jualan%20dan%20Perkhidmatan.png",
     suspectImage: "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/1f085a32ef9d9932fb7fef4860d49bdc8e2965b2/Puan%20Mei.png",
     dialogues: [
       { speaker: "Puan Mei", emoji: "😟", text: "Datuk Bandar, pelanggan merungut kenapa resit tiada caj cukai sedangkan saya ini perniagaan besar?" },
@@ -78,7 +78,7 @@ export const POI_DATA: POICase[] = [
     offenseDetail: "Tidak Dibayar Sejak Tahun Lepas", 
     evidenceIcon: "domain_disabled", 
     evidenceText: "Aduan PBT",
-    evidenceImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop", // Modern building
+    evidenceImage: "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/cf54c2f2364192a0228c6da323c846c21ffdd441/Cukai%20Pintu'.png",
     suspectImage: "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/1f085a32ef9d9932fb7fef4860d49bdc8e2965b2/En%20Ali.png",
     dialogues: [
       { speaker: "Encik Ali", emoji: "🤔", text: "Saya keliru, kenapa saya terima dua bil? Bukankah Cukai Pintu dan Cukai Tanah tu benda yang sama?" },
@@ -96,7 +96,7 @@ export const POI_DATA: POICase[] = [
     offenseDetail: "Gaji Besar Tiada BNCP", 
     evidenceIcon: "account_balance_wallet", 
     evidenceText: "LHDN Audit",
-    evidenceImage: "https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=800&auto=format&fit=crop", // Office desk
+    evidenceImage: "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/cf54c2f2364192a0228c6da323c846c21ffdd441/Cukai%20Pendapatan%20Individu.png",
     suspectImage: "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/1f085a32ef9d9932fb7fef4860d49bdc8e2965b2/En%20Ravi.png",
     dialogues: [
       { speaker: "Encik Ravi", emoji: "🤫", text: "Saya tak mahu isytihar pendapatan. Boleh jimat duit." },
@@ -114,7 +114,7 @@ export const POI_DATA: POICase[] = [
     offenseDetail: "Abaikan Notis Borang 6A", 
     evidenceIcon: "landscape", 
     evidenceText: "Tanah Terbiar",
-    evidenceImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop", // Empty land
+    evidenceImage: "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/cf54c2f2364192a0228c6da323c846c21ffdd441/Cukai%20Tanah.png",
     suspectImage: "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/1f085a32ef9d9932fb7fef4860d49bdc8e2965b2/En%20Abdullah.png",
     dialogues: [
       { speaker: "Encik Abdullah", emoji: "🙄", text: "Tanah saya kosong tak buat apa-apa, kenapa saya kena bayar cukai tanah pula?" },
