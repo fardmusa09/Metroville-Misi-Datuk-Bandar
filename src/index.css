@@ -128,12 +128,21 @@
   50% { opacity: 0.7; }
 }
 
+@keyframes zoom-in-subtle {
+  from { transform: scale(1); }
+  to { transform: scale(1.15); }
+}
+
 .animate-shimmer {
   animation: shimmer 2s infinite;
 }
 
 .animate-pulse-soft {
   animation: pulse-soft 3s ease-in-out infinite;
+}
+
+.animate-zoom-in-subtle {
+  animation: zoom-in-subtle 10s ease-out forwards;
 }
 
 .isometric-bg {

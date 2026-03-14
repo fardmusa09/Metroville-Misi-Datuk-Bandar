@@ -32,7 +32,7 @@ export const PhaseVictory: React.FC<PhaseVictoryProps> = ({ playerName, playerAv
               <span className="text-[10px] font-black text-primary-dark uppercase tracking-wider">Reputasi:</span>
               <span className="text-sm font-black text-slate-800">{score} PTS</span>
             </div>
-            <div className="h-10 w-10 overflow-hidden rounded-full border-2 border-primary bg-slate-100 mayor-avatar-bg" style={{ backgroundImage: `url('${playerAvatar}')` }}></div>
+            <div className="h-10 w-10 overflow-hidden rounded-full border-2 border-primary bg-slate-100 bg-[length:250%] bg-[center_top]" style={{ backgroundImage: `url('${playerAvatar}')` }}></div>
           </div>
         </div>
       </header>

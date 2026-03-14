@@ -59,8 +59,8 @@ export const PhaseMenu: React.FC<PhaseMenuProps> = ({ playerName, playerAvatar, 
             <span className="material-symbols-outlined text-2xl">settings</span>
           </button>
           <div className="glass-panel h-12 px-4 rounded-full flex items-center gap-2 border-primary/30">
-            <div className="w-8 h-8 rounded-full border border-primary overflow-hidden shadow-sm">
-              <img src={playerAvatar} alt={playerName} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <div className="w-8 h-8 rounded-full border border-primary overflow-hidden shadow-sm bg-slate-100">
+              <img src={playerAvatar} alt={playerName} className="w-full h-full object-cover object-top scale-[2.5] origin-top" referrerPolicy="no-referrer" />
             </div>
             <span className="text-xs font-black text-slate-800 tracking-wide uppercase">{playerName}</span>
           </div>

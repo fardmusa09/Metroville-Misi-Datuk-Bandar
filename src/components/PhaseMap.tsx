@@ -246,7 +246,7 @@ export const PhaseMap: React.FC<PhaseMapProps> = ({
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                           <div className="rounded-2xl p-1 bg-red-500/20 backdrop-blur-sm border-4 border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]">
                             <div className="relative w-48 h-48 bg-slate-900 rounded-xl overflow-hidden flex flex-col items-center justify-center shadow-[0_0_50px_rgba(239,68,68,0.2)]">
-                              <img className="absolute inset-0 w-full h-full object-cover object-top" src={activePoi.evidenceImage} alt="Evidence" referrerPolicy="no-referrer"/>
+                              <img className="absolute inset-0 w-full h-full object-cover object-top animate-zoom-in-subtle" src={activePoi.evidenceImage} alt="Evidence" referrerPolicy="no-referrer"/>
                               <div className="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase shadow-md">EVIDENCE</div>
                               <div className="absolute bottom-2 right-2 bg-slate-900/80 p-1.5 rounded-lg backdrop-blur-sm border border-white/20">
                                 <span className="material-symbols-outlined text-2xl text-white/90">{activePoi.evidenceIcon}</span>

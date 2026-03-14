@@ -122,9 +122,9 @@ export const GameHeader: React.FC<GameHeaderProps> = ({
             <span className="material-symbols-outlined text-sm md:text-base">menu_book</span>
           </button>
           <div className="relative">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl border-2 border-primary overflow-hidden shadow-xl mayor-avatar-bg p-0.5 bg-white">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl border-2 border-primary overflow-hidden shadow-xl p-0.5 bg-white">
               <div 
-                className="w-full h-full rounded-lg bg-cover bg-center" 
+                className="w-full h-full rounded-lg bg-[length:250%] bg-[center_top]" 
                 style={{ backgroundImage: `url('${playerAvatar}')` }}
               ></div>
             </div>

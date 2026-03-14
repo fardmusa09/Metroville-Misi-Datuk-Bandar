@@ -10,8 +10,9 @@ interface PhaseRegistrationProps {
 
 const AVATARS = [
   MAYOR_AVATAR_URL,
-  "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/1f085a32ef9d9932fb7fef4860d49bdc8e2965b2/Avatar%202.png",
-  "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/1f085a32ef9d9932fb7fef4860d49bdc8e2965b2/Avatar%203.png"
+  "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/7293e55ae87f298bcecc5b0ad3bd973a198c958a/Datuk%20Bandar%203.png",
+  "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/7293e55ae87f298bcecc5b0ad3bd973a198c958a/Datuk%20Bandar%205.png",
+  "https://raw.githubusercontent.com/fardmusa09/Metroville-Game/7293e55ae87f298bcecc5b0ad3bd973a198c958a/Datuk%20Bandar%206.png"
 ];
 
 export const PhaseRegistration: React.FC<PhaseRegistrationProps> = ({ onComplete, onShowSettings }) => {
