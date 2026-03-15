@@ -25,7 +25,7 @@ export const PhaseFormula: React.FC<PhaseFormulaProps> = ({
   onUpdateScore,
   onComplete, 
   onShowGuide, 
-  onShowSettings 
+  onShowSettings
 }) => {
   const [slots, setSlots] = useState<(string | null)[]>([null, null, null]);
   const [selectedBlock, setSelectedBlock] = useState<string | null>(null);

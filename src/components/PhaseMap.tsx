@@ -25,7 +25,7 @@ export const PhaseMap: React.FC<PhaseMapProps> = ({
   onUpdateScore,
   onComplete, 
   onShowGuide, 
-  onShowSettings 
+  onShowSettings
 }) => {
   const [exploredItems, setExploredItems] = useState<Set<string>>(new Set());
   const [activePoi, setActivePoi] = useState<POICase | null>(null);
@@ -127,14 +127,14 @@ export const PhaseMap: React.FC<PhaseMapProps> = ({
         />
         
         <div className="flex-1 flex flex-col items-start justify-start px-4 md:px-6 gap-3 md:gap-4 min-h-0">
-          <div className="w-64 md:w-72 bg-white/95 backdrop-blur-xl rounded-2xl border border-white/50 shadow-2xl flex flex-col shrink-0 hidden sm:flex pointer-events-auto">
-            <div className="p-3 md:p-4 border-b border-slate-100 shrink-0">
+          <div className="w-full sm:w-64 md:w-72 bg-white/95 backdrop-blur-xl rounded-2xl border border-white/50 shadow-2xl flex flex-col shrink-0 pointer-events-auto max-h-[25vh] sm:max-h-none overflow-y-auto">
+            <div className="p-2 md:p-4 border-b border-slate-100 shrink-0 sticky top-0 bg-white/95 backdrop-blur-xl z-10">
               <h3 className="text-slate-900 font-black text-xs md:text-sm flex items-center gap-2">
                 <span className="material-symbols-outlined text-primary text-base md:text-lg">assignment</span>
                 Aktual Misi
               </h3>
             </div>
-            <div className="p-2 flex flex-col gap-0.5 md:gap-1">
+            <div className="p-1.5 md:p-2 flex flex-col gap-0.5 md:gap-1">
               {POI_DATA.map((poi, idx) => {
                 const isVisited = exploredItems.has(poi.id);
                 return (
@@ -263,11 +263,11 @@ export const PhaseMap: React.FC<PhaseMapProps> = ({
                       </div>
                     </div>
 
-                    <div className="h-36 md:h-40 flex items-center gap-6 px-6 glass-panel rounded-2xl shadow-xl border-l-8 border-primary-dark bg-white/95 relative">
+                    <div className="min-h-[9rem] md:h-40 flex items-center gap-3 md:gap-6 p-4 md:px-6 glass-panel rounded-2xl shadow-xl border-l-8 border-primary-dark bg-white/95 relative">
                       {/* Speech bubble tail */}
                       <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-r-[15px] border-r-primary-dark border-b-[10px] border-b-transparent"></div>
                       
-                      <div className="shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-slate-200 overflow-hidden bg-slate-100 flex items-center justify-center shadow-inner relative">
+                      <div className="shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-full border-4 border-slate-200 overflow-hidden bg-slate-100 flex items-center justify-center shadow-inner relative">
                         {activePoi.dialogues[currentPoiStep].speaker === "Datuk Bandar" ? (
                           <img src={playerAvatar} className="w-full h-full character-portrait" alt={playerName} referrerPolicy="no-referrer" />
                         ) : activePoi.dialogues[currentPoiStep].speaker === "CFO Kamal" ? (
@@ -278,16 +278,16 @@ export const PhaseMap: React.FC<PhaseMapProps> = ({
                       </div>
                       <div className="flex-1 flex flex-col justify-center">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className={`text-base font-black uppercase tracking-tighter ${activePoi.dialogues[currentPoiStep].speaker === "Datuk Bandar" ? 'text-primary-dark' : 'text-slate-800'}`}>
+                          <span className={`text-sm md:text-base font-black uppercase tracking-tighter ${activePoi.dialogues[currentPoiStep].speaker === "Datuk Bandar" ? 'text-primary-dark' : 'text-slate-800'}`}>
                             {activePoi.dialogues[currentPoiStep].speaker === "Datuk Bandar" ? playerName : activePoi.dialogues[currentPoiStep].speaker}
                           </span>
                         </div>
-                        <p className="text-slate-700 font-medium text-sm md:text-base leading-relaxed">
+                        <p className="text-slate-700 font-medium text-xs md:text-base leading-relaxed">
                           {activePoi.dialogues[currentPoiStep].text.replace(/Datuk Bandar/g, playerName)}
                         </p>
                       </div>
-                      <button onClick={nextDialogue} className="bg-slate-800 text-white px-6 py-4 rounded-xl font-bold text-sm flex items-center gap-2 hover:bg-slate-900 transition-all shadow-md btn-hover-effect shrink-0">
-                        Teruskan <span className="material-symbols-outlined text-lg">chevron_right</span>
+                      <button onClick={nextDialogue} className="bg-slate-800 text-white px-3 py-2 md:px-6 md:py-4 rounded-xl font-bold text-xs md:text-sm flex items-center gap-1 md:gap-2 hover:bg-slate-900 transition-all shadow-md btn-hover-effect shrink-0">
+                        Teruskan <span className="material-symbols-outlined text-base md:text-lg">chevron_right</span>
                       </button>
                     </div>
                   </>

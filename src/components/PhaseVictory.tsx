@@ -27,12 +27,12 @@ export const PhaseVictory: React.FC<PhaseVictoryProps> = ({ playerName, playerAv
           <div className="flex items-center gap-3">
             <img src="https://raw.githubusercontent.com/fardiansyahmusa-ai/agro-edugame-assets/afb38981765fad8d84db02ba9f85df6934a7f422/ChatGPT%20Image%20Mar%203%2C%202026%2C%2010_25_20%20AM.png" alt="Logo Metroville" className="h-10 object-contain drop-shadow-sm" referrerPolicy="no-referrer"/>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="bg-white/90 px-4 py-1.5 rounded-full border border-primary/20 shadow-sm flex items-center gap-2">
-              <span className="text-[10px] font-black text-primary-dark uppercase tracking-wider">Reputasi:</span>
-              <span className="text-sm font-black text-slate-800">{score} PTS</span>
+          <div className="flex items-center gap-2 md:gap-4">
+            <div className="bg-white/90 px-3 md:px-4 py-1.5 rounded-full border border-primary/20 shadow-sm flex items-center gap-1 md:gap-2">
+              <span className="text-[9px] md:text-[10px] font-black text-primary-dark uppercase tracking-wider hidden sm:inline">Reputasi:</span>
+              <span className="text-xs md:text-sm font-black text-slate-800">{score} PTS</span>
             </div>
-            <div className="h-10 w-10 overflow-hidden rounded-full border-2 border-primary bg-slate-100 bg-[length:250%] bg-[center_top]" style={{ backgroundImage: `url('${playerAvatar}')` }}></div>
+            <div className="h-8 w-8 md:h-10 md:w-10 overflow-hidden rounded-full border-2 border-primary bg-slate-100 bg-[length:250%] bg-[center_top] shrink-0" style={{ backgroundImage: `url('${playerAvatar}')` }}></div>
           </div>
         </div>
       </header>

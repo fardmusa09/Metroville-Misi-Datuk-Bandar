@@ -30,14 +30,14 @@ export const PhaseIntro: React.FC<PhaseIntroProps> = ({ onComplete }) => {
           <img 
             src="https://raw.githubusercontent.com/fardiansyahmusa-ai/agro-edugame-assets/afb38981765fad8d84db02ba9f85df6934a7f422/ChatGPT%20Image%20Mar%203%2C%202026%2C%2010_25_20%20AM.png" 
             alt="Logo Metroville" 
-            className="h-80 md:h-[32rem] mb-8 object-contain drop-shadow-[0_0_20px_rgba(19,236,91,0.5)]"
+            className="h-48 sm:h-64 md:h-[32rem] mb-6 md:mb-8 object-contain drop-shadow-[0_0_20px_rgba(19,236,91,0.5)]"
             referrerPolicy="no-referrer"
           />
           <button 
             onClick={playIntro} 
-            className="bg-primary text-slate-900 font-bold text-xl py-4 px-10 rounded-full shadow-[0_0_30px_rgba(19,236,91,0.4)] transition-transform hover:scale-105 flex items-center gap-3"
+            className="bg-primary text-slate-900 font-bold text-lg md:text-xl py-3 md:py-4 px-8 md:px-10 rounded-full shadow-[0_0_30px_rgba(19,236,91,0.4)] transition-transform hover:scale-105 flex items-center gap-2 md:gap-3"
           >
-            <span className="material-symbols-outlined text-3xl">play_circle</span> Mulakan Pengalaman
+            <span className="material-symbols-outlined text-2xl md:text-3xl">play_circle</span> Mulakan Pengalaman
           </button>
         </div>
       ) : null}

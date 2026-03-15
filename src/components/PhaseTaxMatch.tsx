@@ -144,7 +144,7 @@ export function PhaseTaxMatch({
   onUpdateScore,
   onComplete, 
   onShowGuide, 
-  onShowSettings 
+  onShowSettings
 }: PhaseTaxMatchProps) {
   const [taxTypes, setTaxTypes] = useState(TAX_TYPES);
   const [agencies, setAgencies] = useState(INITIAL_AGENCIES);

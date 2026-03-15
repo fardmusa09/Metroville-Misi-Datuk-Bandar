@@ -41,7 +41,7 @@ export const PhaseRegistration: React.FC<PhaseRegistrationProps> = ({ onComplete
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-white z-10 p-8 flex flex-col items-center"
+        className="relative w-full max-w-md mx-4 bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-white z-10 p-6 md:p-8 flex flex-col items-center"
       >
         {/* Logo */}
         <div className="mb-6">

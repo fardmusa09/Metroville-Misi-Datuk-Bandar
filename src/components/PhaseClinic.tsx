@@ -134,7 +134,7 @@ export const PhaseClinic: React.FC<PhaseClinicProps> = ({
   onShowGuide, 
   onUpdateFund, 
   onUpdateScore,
-  onShowSettings 
+  onShowSettings
 }) => {
   const [caseIndex, setCaseIndex] = useState(0);
   const [inputs, setInputs] = useState<any>({});
