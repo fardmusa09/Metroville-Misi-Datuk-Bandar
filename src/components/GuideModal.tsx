@@ -177,27 +177,27 @@ export const GuideModal: React.FC<GuideModalProps> = ({ isOpen, onClose }) => {
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="relative w-full max-w-4xl h-[85vh] bg-white rounded-3xl overflow-hidden flex flex-col border-2 border-white z-10 shadow-2xl"
           >
-            <header className="flex flex-col px-6 py-4 border-b border-slate-100 bg-emerald-50/50">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="size-10 flex items-center justify-center bg-primary rounded-xl text-white shadow-md shadow-primary/30">
-                    <span className="material-symbols-outlined text-2xl">menu_book</span>
+            <header className="flex flex-col px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-100 bg-emerald-50/50">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="size-8 sm:size-10 flex items-center justify-center bg-primary rounded-lg sm:rounded-xl text-white shadow-md shadow-primary/30 shrink-0">
+                    <span className="material-symbols-outlined text-xl sm:text-2xl">menu_book</span>
                   </div>
                   <div>
-                    <h1 className="text-xl font-bold text-slate-800 leading-tight">Panduan Cukai Hero</h1>
-                    <p className="text-xs font-bold text-primary uppercase tracking-wider">Rujukan Rasmi Datuk Bandar</p>
+                    <h1 className="text-lg sm:text-xl font-bold text-slate-800 leading-tight">Panduan Cukai Hero</h1>
+                    <p className="text-[10px] sm:text-xs font-bold text-primary uppercase tracking-wider">Rujukan Rasmi Datuk Bandar</p>
                   </div>
                 </div>
-                <button onClick={onClose} className="size-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-400 hover:bg-red-500 hover:text-white transition-all active:scale-95">
-                  <span className="material-symbols-outlined text-xl">close</span>
+                <button onClick={onClose} className="size-8 sm:size-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-400 hover:bg-red-500 hover:text-white transition-all active:scale-95 shrink-0">
+                  <span className="material-symbols-outlined text-lg sm:text-xl">close</span>
                 </button>
               </div>
               
               {/* Tabs */}
-              <div className="flex gap-2 bg-slate-200/50 p-1 rounded-xl w-full max-w-md">
+              <div className="flex gap-1.5 sm:gap-2 bg-slate-200/50 p-1 rounded-lg sm:rounded-xl w-full max-w-md mx-auto sm:mx-0">
                 <button 
                   onClick={() => setActiveTab('jenis')}
-                  className={`flex-1 py-2 px-4 rounded-lg text-xs font-black uppercase tracking-wider transition-all ${activeTab === 'jenis' ? 'bg-white text-primary shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                  className={`flex-1 py-1.5 sm:py-2 px-2 sm:px-4 rounded-md sm:rounded-lg text-[10px] sm:text-xs font-black uppercase tracking-wider transition-all ${activeTab === 'jenis' ? 'bg-white text-primary shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
                 >
                   Jenis-jenis Cukai
                 </button>

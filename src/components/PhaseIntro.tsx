@@ -26,7 +26,7 @@ export const PhaseIntro: React.FC<PhaseIntroProps> = ({ onComplete }) => {
   return (
     <div className="h-screen w-screen bg-black flex items-center justify-center relative overflow-hidden z-[100]">
       {!started ? (
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm">
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm p-4">
           <img 
             src="https://raw.githubusercontent.com/fardiansyahmusa-ai/agro-edugame-assets/afb38981765fad8d84db02ba9f85df6934a7f422/ChatGPT%20Image%20Mar%203%2C%202026%2C%2010_25_20%20AM.png" 
             alt="Logo Metroville" 
@@ -35,9 +35,9 @@ export const PhaseIntro: React.FC<PhaseIntroProps> = ({ onComplete }) => {
           />
           <button 
             onClick={playIntro} 
-            className="bg-primary text-slate-900 font-bold text-lg md:text-xl py-3 md:py-4 px-8 md:px-10 rounded-full shadow-[0_0_30px_rgba(19,236,91,0.4)] transition-transform hover:scale-105 flex items-center gap-2 md:gap-3"
+            className="bg-primary text-slate-900 font-bold text-base sm:text-lg md:text-xl py-3 md:py-4 px-6 sm:px-8 md:px-10 rounded-full shadow-[0_0_30px_rgba(19,236,91,0.4)] transition-transform hover:scale-105 flex items-center gap-2 md:gap-3"
           >
-            <span className="material-symbols-outlined text-2xl md:text-3xl">play_circle</span> Mulakan Pengalaman
+            <span className="material-symbols-outlined text-xl sm:text-2xl md:text-3xl">play_circle</span> Mulakan Pengalaman
           </button>
         </div>
       ) : null}
@@ -58,9 +58,9 @@ export const PhaseIntro: React.FC<PhaseIntroProps> = ({ onComplete }) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
           onClick={handleComplete} 
-          className="absolute bottom-8 right-8 md:bottom-12 md:right-12 z-30 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white font-bold py-2.5 px-6 rounded-full border border-white/30 transition-colors flex items-center gap-2 shadow-lg"
+          className="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 z-30 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white font-bold py-2 sm:py-2.5 px-4 sm:px-6 rounded-full border border-white/30 transition-colors flex items-center gap-1.5 sm:gap-2 shadow-lg text-xs sm:text-sm md:text-base"
         >
-          Langkau <span className="material-symbols-outlined text-base">skip_next</span>
+          Langkau <span className="material-symbols-outlined text-sm sm:text-base">skip_next</span>
         </motion.button>
       )}
     </div>

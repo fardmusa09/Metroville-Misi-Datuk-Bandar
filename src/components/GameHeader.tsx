@@ -40,10 +40,10 @@ export const GameHeader: React.FC<GameHeaderProps> = ({
   };
 
   return (
-    <header className="flex flex-wrap items-center justify-between gap-3 md:gap-4 p-3 md:p-6 z-50 shrink-0 relative w-full max-w-[1600px] mx-auto pointer-events-auto">
+    <header className="flex flex-wrap items-center justify-between gap-2 md:gap-4 p-2 md:p-6 z-50 shrink-0 relative w-full max-w-[1600px] mx-auto pointer-events-auto">
       {/* Left: Logo Section */}
-      <div className="flex items-center gap-2 md:gap-3 bg-white/80 backdrop-blur-md p-1.5 md:p-2 pr-3 md:pr-4 rounded-xl md:rounded-2xl border border-white/50 shadow-lg">
-        <div className="bg-primary/20 p-1 md:p-1.5 rounded-lg md:rounded-xl">
+      <div className="flex items-center gap-2 md:gap-3 bg-white/80 backdrop-blur-md p-1.5 md:p-2 pr-2 md:pr-4 rounded-xl md:rounded-2xl border border-white/50 shadow-lg shrink-0">
+        <div className="bg-primary/20 p-1 md:p-1.5 rounded-lg md:rounded-xl hidden sm:block">
           <img 
             src="https://raw.githubusercontent.com/fardiansyahmusa-ai/agro-edugame-assets/afb38981765fad8d84db02ba9f85df6934a7f422/ChatGPT%20Image%20Mar%203%2C%202026%2C%2010_25_20%20AM.png" 
             alt="Logo Metroville" 
@@ -53,12 +53,12 @@ export const GameHeader: React.FC<GameHeaderProps> = ({
         </div>
         <div className="flex flex-col">
           <h1 className="text-[10px] md:text-sm font-black text-slate-800 uppercase tracking-tight leading-none">Metroville</h1>
-          <p className="text-[8px] md:text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-0.5 md:mt-1">{title}</p>
+          <p className="text-[8px] md:text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-0.5 md:mt-1 truncate max-w-[80px] sm:max-w-[120px] md:max-w-none">{title}</p>
         </div>
       </div>
 
       {/* Center: City Development Fund (The Vault) */}
-      <div className="flex flex-col items-center gap-1 bg-slate-900/90 backdrop-blur-xl px-4 py-2 md:px-6 md:py-2.5 rounded-xl md:rounded-2xl border border-white/10 shadow-2xl w-full order-last md:order-none md:w-auto md:min-w-[400px] relative overflow-hidden group">
+      <div className="flex flex-col items-center gap-1 bg-slate-900/90 backdrop-blur-xl px-3 py-2 md:px-6 md:py-2.5 rounded-xl md:rounded-2xl border border-white/10 shadow-2xl w-full order-last sm:order-none sm:w-auto sm:flex-1 md:min-w-[400px] max-w-2xl relative overflow-hidden group">
         {/* Decorative background elements */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
@@ -124,7 +124,7 @@ export const GameHeader: React.FC<GameHeaderProps> = ({
           <div className="relative">
             <div className="w-8 h-8 md:w-12 md:h-12 rounded-lg md:rounded-xl border-2 border-primary overflow-hidden shadow-xl p-0.5 bg-white">
               <div 
-                className="w-full h-full rounded-md md:rounded-lg bg-[length:250%] bg-[center_top]" 
+                className="w-full h-full rounded-md md:rounded-lg bg-cover bg-center" 
                 style={{ backgroundImage: `url('${playerAvatar}')` }}
               ></div>
             </div>

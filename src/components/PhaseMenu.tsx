@@ -48,37 +48,37 @@ export const PhaseMenu: React.FC<PhaseMenuProps> = ({ playerName, playerAvatar, 
         <div className="absolute top-4 right-4 md:top-6 md:right-6 flex items-center gap-2 md:gap-3 z-30">
           <button 
             onClick={onShowGuide}
-            className="glass-panel size-10 md:size-12 rounded-full flex items-center justify-center text-slate-700 hover:text-primary-dark hover:bg-white transition-all shadow-lg"
+            className="glass-panel size-8 sm:size-10 md:size-12 rounded-full flex items-center justify-center text-slate-700 hover:text-primary-dark hover:bg-white transition-all shadow-lg"
           >
-            <span className="material-symbols-outlined text-xl md:text-2xl">menu_book</span>
+            <span className="material-symbols-outlined text-lg sm:text-xl md:text-2xl">menu_book</span>
           </button>
           <button 
             onClick={onShowSettings}
-            className="glass-panel size-10 md:size-12 rounded-full flex items-center justify-center text-slate-700 hover:text-primary-dark hover:bg-white transition-all shadow-lg"
+            className="glass-panel size-8 sm:size-10 md:size-12 rounded-full flex items-center justify-center text-slate-700 hover:text-primary-dark hover:bg-white transition-all shadow-lg"
           >
-            <span className="material-symbols-outlined text-xl md:text-2xl">settings</span>
+            <span className="material-symbols-outlined text-lg sm:text-xl md:text-2xl">settings</span>
           </button>
-          <div className="glass-panel h-10 md:h-12 px-3 md:px-4 rounded-full flex items-center gap-2 border-primary/30">
-            <div className="w-6 h-6 md:w-8 md:h-8 rounded-full border border-primary overflow-hidden shadow-sm bg-slate-100">
+          <div className="glass-panel h-8 sm:h-10 md:h-12 px-2 sm:px-3 md:px-4 rounded-full flex items-center gap-1.5 sm:gap-2 border-primary/30">
+            <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded-full border border-primary overflow-hidden shadow-sm bg-slate-100 shrink-0">
               <img src={playerAvatar} alt={playerName} className="w-full h-full object-cover object-top scale-[2.5] origin-top" referrerPolicy="no-referrer" />
             </div>
-            <span className="text-[10px] md:text-xs font-black text-slate-800 tracking-wide uppercase max-w-[80px] md:max-w-none truncate">{playerName}</span>
+            <span className="text-[9px] sm:text-[10px] md:text-xs font-black text-slate-800 tracking-wide uppercase max-w-[60px] sm:max-w-[80px] md:max-w-none truncate">{playerName}</span>
           </div>
         </div>
 
         {/* BEGIN: Top Header */}
-        <header className="flex flex-col items-center text-center animate-float mt-16 md:mt-4">
+        <header className="flex flex-col items-center text-center animate-float mt-12 sm:mt-16 md:mt-4">
           {/* Game Logo */}
           <div className="mb-2">
             <img 
               alt="Metroville Logo" 
-              className="h-48 sm:h-64 md:h-[28rem] object-contain drop-shadow-[0_0_30px_rgba(19,236,91,0.4)]" 
+              className="h-40 sm:h-48 md:h-64 lg:h-[28rem] object-contain drop-shadow-[0_0_30px_rgba(19,236,91,0.4)]" 
               src="https://raw.githubusercontent.com/fardiansyahmusa-ai/agro-edugame-assets/afb38981765fad8d84db02ba9f85df6934a7f422/ChatGPT%20Image%20Mar%203%2C%202026%2C%2010_25_20%20AM.png"
               referrerPolicy="no-referrer"
             />
           </div>
           {/* Secondary Title/Subheader */}
-          <h2 className="text-white text-sm sm:text-lg md:text-xl font-black tracking-widest uppercase bg-primary-dark/80 px-6 py-2 md:px-8 md:py-2.5 rounded-full border-2 border-white/50 shadow-xl" style={{ textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>
+          <h2 className="text-white text-xs sm:text-sm md:text-lg lg:text-xl font-black tracking-widest uppercase bg-primary-dark/80 px-4 py-1.5 sm:px-6 sm:py-2 md:px-8 md:py-2.5 rounded-full border-2 border-white/50 shadow-xl" style={{ textShadow: '0 4px 8px rgba(0,0,0,0.3)' }}>
             Selamat Datang {playerName}
           </h2>
         </header>
